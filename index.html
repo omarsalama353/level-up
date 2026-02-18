@@ -9,44 +9,195 @@
       rel="stylesheet"
     />
     <style>
-        /* PlayStation Shapes Background */
-.shapes-bg {
+      /* Game Style Bottom Message */
+.game-notification {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keeps it behind everything */
-    overflow: hidden;
-    pointer-events: none;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 3px solid #ffcc00; /* Ramadan Gold */
+    padding: 15px 25px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), inset 0 0 10px rgba(255, 204, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Rajdhani', sans-serif;
+}
+/* Animation to fade out and slide down */
+.game-notification.fade-out {
+    animation: slideDown 1s forwards;
 }
 
-.shape {
+@keyframes slideDown {
+    0% { bottom: 20px; opacity: 1; }
+    100% { bottom: -100px; opacity: 0; visibility: hidden; }
+}
+
+/* Corner detail to make it look like a UI box */
+.pixel-corner {
     position: absolute;
-    opacity: 0.1; /* Very subtle */
-    font-family: 'Arial', sans-serif;
+    top: -3px;
+    left: -3px;
+    width: 15px;
+    height: 15px;
+    border-top: 5px solid #ffcc00;
+    border-left: 5px solid #ffcc00;
+}
+
+.system-text {
+    color: #ffcc00;
     font-weight: bold;
-    animation: float 20s linear infinite;
+    margin-right: 10px;
+    text-transform: uppercase;
 }
 
-/* Specific Colors for PlayStation Vibe */
-.cross { color: #4e5add; font-size: 40px; }      /* Blue X */
-.circle { color: #d31212; font-size: 35px; }     /* Red O */
-.square { color: #d33ceb; font-size: 38px; }     /* Pink Square */
-.triangle { color: #37e990; font-size: 42px; }   /* Green Triangle */
-
-@keyframes float {
-    0% {
-        transform: translateY(110vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% { opacity: 0.15; }
-    90% { opacity: 0.15; }
-    100% {
-        transform: translateY(-20vh) rotate(360deg);
-        opacity: 0;
-    }
+.message-content {
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
 }
+
+/* The blinking game cursor at the end of the message */
+.blinking-cursor {
+    color: #ffcc00;
+    font-size: 0.8rem;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Optional: Animates the box sliding up when the page loads */
+.game-notification {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from { bottom: -100px; opacity: 0; }
+    to { bottom: 20px; opacity: 1; }
+}
+      /* Ramadan Decorations */
+      .ramadan-extras {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0; /* Sits behind the menu but in front of shapes */
+      }
+
+      /* Hanging Lanterns */
+      .lantern {
+        position: absolute;
+        width: 60px;
+        top: -10px;
+        transform-origin: top center;
+        animation: swing 3s ease-in-out infinite;
+        filter: drop-shadow(0 0 10px #ffcc00);
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+        100% {
+          transform: rotate(-5deg);
+        }
+      }
+
+      /* The Moon */
+      .moon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 50px;
+        color: #fffde7;
+        text-shadow: 0 0 20px #f1c40f;
+        opacity: 0.8;
+      }
+
+      /* Twinkling Stars */
+      .star {
+        position: absolute;
+        color: white;
+        font-size: 10px;
+        animation: twinkle 2s infinite ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+      /* PlayStation Shapes Background */
+      .shapes-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Keeps it behind everything */
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.1; /* Very subtle */
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        animation: float 20s linear infinite;
+      }
+
+      /* Specific Colors for PlayStation Vibe */
+      .cross {
+        color: #4e5add;
+        font-size: 40px;
+      } /* Blue X */
+      .circle {
+        color: #d31212;
+        font-size: 35px;
+      } /* Red O */
+      .square {
+        color: #d33ceb;
+        font-size: 38px;
+      } /* Pink Square */
+      .triangle {
+        color: #37e990;
+        font-size: 42px;
+      } /* Green Triangle */
+
+      @keyframes float {
+        0% {
+          transform: translateY(110vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.15;
+        }
+        90% {
+          opacity: 0.15;
+        }
+        100% {
+          transform: translateY(-20vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
       :root {
         --neon-pink: #ff00ff;
         --neon-blue: #00f2ff;
@@ -219,23 +370,33 @@
     </style>
   </head>
   <body>
+    <div class="ramadan-extras">
+      <div class="moon">🌙</div>
+
+      <div class="lantern" style="left: 5%">🏮</div>
+      <div class="lantern" style="left: 15%">🏮</div>
+      <div class="lantern" style="right: 15%">🏮</div>
+      <div class="lantern" style="right: 5%">🏮</div>
+
+      <div class="star" style="top: 10%; left: 25%">✦</div>
+      <div class="star" style="top: 5%; left: 50%">✦</div>
+      <div class="star" style="top: 15%; left: 75%">✦</div>
+      <div class="star" style="top: 40%; left: 10%">✦</div>
+      <div class="star" style="top: 60%; right: 15%">✦</div>
+    </div>
     <div class="shapes-bg">
-    <div class="shape cross" style="left: 30%; animation-delay: 0s;">✕</div>
-    <div class="shape circle" style="left: 30%; animation-delay: 5s;">○</div>
-    <div class="shape square" style="left: 55%; animation-delay: 2s;">□</div>
-    <div class="shape triangle" style="left: 85%; animation-delay: 7s;">△</div>
-    
-    <div class="shape cross" style="left: 20%; animation-delay: 10s;">✕</div>
-    <div class="shape circle" style="left: 70%; animation-delay: 12s;">○</div>
-    <div class="shape square" style="left: 40%; animation-delay: 15s;">□</div>
-    <div class="shape triangle" style="left: 90%; animation-delay: 3s;">△</div>
-</div>
+      <div class="shape cross" style="left: 30%; animation-delay: 0s">✕</div>
+      <div class="shape circle" style="left: 30%; animation-delay: 5s">○</div>
+      <div class="shape square" style="left: 55%; animation-delay: 2s">□</div>
+      <div class="shape triangle" style="left: 85%; animation-delay: 7s">△</div>
+
+      <div class="shape cross" style="left: 20%; animation-delay: 10s">✕</div>
+      <div class="shape circle" style="left: 70%; animation-delay: 12s">○</div>
+      <div class="shape square" style="left: 40%; animation-delay: 15s">□</div>
+      <div class="shape triangle" style="left: 90%; animation-delay: 3s">△</div>
+    </div>
     <header>
-      <img
-        src="logo.png"
-        class="logo-img"
-        alt="Level Up Logo"
-      />
+      <img src="logo.png" class="logo-img" alt="Level Up Logo" />
       <h1 class="cafe-name">Level Up</h1>
     </header>
 
@@ -263,14 +424,10 @@
           <div class="card-overlay"><h2>SOFT DRINKS</h2></div>
         </div>
         <div class="card" onclick="openMenu('desserts')">
-          <img
-            src="Waffles_7.webp"
-            alt="Desserts"
-          />
+          <img src="Waffles_7.webp" alt="Desserts" />
           <div class="card-overlay"><h2>DESSERTS</h2></div>
         </div>
       </div>
-      
 
       <div id="menu-panel">
         <div class="menu-header">
@@ -371,7 +528,6 @@
           { name: "", price: "" },
           { name: "", price: "" },
           { name: "", price: "" },
-
         ],
         soft: [
           { name: "بيبسي", price: "25" },
@@ -385,8 +541,6 @@
           { name: "تويست", price: "25" },
           { name: "فيوري", price: "30" },
           { name: "مياه", price: "10" },
-       
-
         ],
         desserts: [
           { name: "وافل نوتيلا", price: "40" },
@@ -397,10 +551,6 @@
           { name: "(فشار (جبنه - ملح", price: "20" },
           { name: "بوله ايس كريم ", price: "20" },
           { name: "2 بوله ايس كريم", price: "40" },
-          
-
-          
-
         ],
       };
 
@@ -425,5 +575,39 @@
         panel.scrollIntoView({ behavior: "smooth" });
       }
     </script>
+    <div class="game-notification">
+    <div class="pixel-corner"></div>
+    <div class="message-content">
+        <span class="system-text">[level up]:</span> 
+        <span class="typing-text">رمضان كريم استمتع الان بمشروبات رمضانيه حصريا  </span>
+    </div>
+    <div class="blinking-cursor">▼</div>
+</div>
+
+<script>
+    function typeWriter() {
+        const textElement = document.querySelector('.typing-text');
+        const message = textElement.innerText;
+        textElement.innerText = '';
+        let i = 0;
+        function type() {
+            if (i < message.length) {
+                textElement.innerHTML += message.charAt(i);
+                i++;
+                setTimeout(type, 40);
+            }
+        }
+        type();
+    }
+
+    window.onload = () => {
+        typeWriter();
+        // Disappear after 5 seconds
+        setTimeout(() => {
+            document.querySelector('.game-notification').classList.add('fade-out');
+        }, 8000);
+    };
+</script>
+</div>
   </body>
 </html>
