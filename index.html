@@ -119,7 +119,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        font-size: 50px;
+        font-size: 70px;
         color: #fffde7;
         text-shadow: 0 0 20px #f1c40f;
         opacity: 0.8;
@@ -129,7 +129,7 @@
       .star {
         position: absolute;
         color: white;
-        font-size: 10px;
+        font-size: 20px;
         animation: twinkle 2s infinite ease-in-out;
       }
 
@@ -167,19 +167,19 @@
       /* Specific Colors for PlayStation Vibe */
       .cross {
         color: #4e5add;
-        font-size: 40px;
+        font-size: 70px;
       } /* Blue X */
       .circle {
         color: #d31212;
-        font-size: 35px;
+        font-size: 70px;
       } /* Red O */
       .square {
         color: #d33ceb;
-        font-size: 38px;
+        font-size:70px;
       } /* Pink Square */
       .triangle {
         color: #37e990;
-        font-size: 42px;
+        font-size: 70px;
       } /* Green Triangle */
 
       @keyframes float {
@@ -396,36 +396,36 @@
       <div class="shape triangle" style="left: 90%; animation-delay: 3s">△</div>
     </div>
     <header>
-      <img src="logo.png" class="logo-img" alt="Level Up Logo" />
-      <h1 class="cafe-name">Level Up</h1>
+      <img src="photos/logo.png" class="logo-img" alt="Level Up Logo" />
+      <h1 class="cafe-name">Menu</h1>
     </header>
 
     <div class="container">
       <div class="category-grid">
         <div class="card" onclick="openMenu('hot')">
           <img
-            src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800"
+            src="photos/1.png"
             alt="Hot Drinks"
           />
-          <div class="card-overlay"><h2>HOT DRINKS</h2></div>
+          <div class="card-overlay"><h2></h2></div>
         </div>
         <div class="card" onclick="openMenu('cold')">
           <img
-            src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=500"
+            src="photos/2.png"
             alt="Cold Drinks"
           />
-          <div class="card-overlay"><h2>COLD DRINKS</h2></div>
+          <div class="card-overlay"><h2></h2></div>
         </div>
         <div class="card" onclick="openMenu('soft')">
           <img
-            src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800"
+            src="photos/4.png"
             alt="Soft Drinks"
           />
-          <div class="card-overlay"><h2>SOFT DRINKS</h2></div>
+          <div class="card-overlay"><h2></h2></div>
         </div>
         <div class="card" onclick="openMenu('desserts')">
-          <img src="Waffles_7.webp" alt="Desserts" />
-          <div class="card-overlay"><h2>DESSERTS</h2></div>
+          <img src="photos/3.png" alt="Desserts" />
+          <div class="card-overlay"><h2></h2></div>
         </div>
       </div>
 
@@ -447,20 +447,20 @@
     <script>
       // --- EASY TO EDIT SECTION ---
       const menuData = {
-        hot: [
-          { name: "قهوه تركى دبل", price: "30" },
+        hot: [  
+          { name: "قهوة تركي سنجل", price: "25" },
+          { name: "قهوه تركى دبل", price: "35" },
           { name: "قهوة فرنساوى", price: "40" },
           { name: "قهوة بندق", price: "40" },
           { name: "قهوة نيوتيلا", price: "40" },
           { name: "قهوة أسبيشال", price: "35" },
-          { name: "قهوة تركي سنجل", price: "20" },
           { name: "اسبرسو سنجل", price: "35" },
           { name: "اسبرسو دبل", price: "40" },
           { name: "اسبرسو ميكاتو", price: "45" },
           { name: "اسبرسو ميكاتو دبل", price: "55" },
           { name: "كابتشينو", price: "65" },
           { name: "لاتيه كلاسيك", price: "50" },
-          { name: "أمريكان", price: "50" },
+          { name: "أمريكانو", price: "50" },
           { name: "موكا", price: "60" },
           { name: "فلات ويت", price: "60" },
           { name: "كارمل ميكاتو", price: "40" },
@@ -481,53 +481,60 @@
           { name: "شاي ميلك", price: "20" },
           { name: "قرفه ميلك", price: "20" },
           { name: "شاى نكهات", price: "15" },
+          { name: "قرفه", price: "20" },
+          { name: "قرفه ميلك", price: "25" },
+          { name: "جنزبيل", price: "15" },
+          { name: "كوكتيل اعشاب", price: "30" },
+          { name: "سحلب مكسرات", price: "40" },
+          { name: "سحلب فواكه", price: "50" },
           { name: "حمص", price: "40" },
           { name: "هوت شوكلت", price: "45" },
           { name: "هوت وايت شوكلت", price: "45" },
           { name: "هوت سيدر", price: "45" },
+          { name: "اندومي", price: "25" },
+          
         ],
-        cold: [
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
-          { name: "", price: "" },
+        cold: [ 
+          { name: "مانجو", price: "50" },
+          { name: "برتقال ", price: "35" },
+          { name: "فراوله ", price: "35" },
+          { name: "جوافه", price: "30" },
+          { name: "ليمون", price: "35" },
+          { name: "كيوي", price: "60" },
+          { name: "افوكاتو", price: "70" },
+          { name: "موز بلبن", price: "45" },
+          { name: "فراوله بلبن", price: "50" },
+          { name: "جوافه بلبن", price: "45" },
+          { name: "لمون نعناع", price: "35" },
+          { name: "زبادي عسل", price: "35" },
+          { name: "زبادي فواكه", price: "45" },
+          { name: "كنتالوب", price: "40" },
+          { name: "بطيخ", price: "45" },
+          { name: "مانجو كيوي", price: "60" },
+          { name: "عناب", price: "30" },
+          { name: " ميلك تشيك كارميل", price: "50" },
+          { name: "ميلك تشيك شوكليت", price: "50" },
+          { name: "ميلك تشيك لوتس", price: "60" },
+          { name: "ميلك تشيك بلوبيري", price: "50" },
+          { name: "ميلك تشيك ميكس بيري", price: "50" },
+          { name: "ميلك تشيك اوريو", price: "60" },
+          { name: "ميلك تشيك بستاشيو", price: "95" },
+          { name: "ميلك تشيك بوبا بو بيري", price: "85" },
+          { name: "ميلك تشيك بوبا باشون فروت", price: "85" },
+          { name: "كلاسيك موخيتو", price: "65" },
+          { name: "موخيتو بلوبيري", price: "60" },
+          { name: "موخيتو ميكس بيري", price: "95" },
+          { name: "موخيتو باشون", price: "70" },
+          { name: "بلو اوشان", price: "85" },
+          { name: "شيري كولا ", price: "55" },
+          { name: "صن شاين ", price: "70" },
+          { name: "فلوريدا", price: "80" },
+          { name: "بينا كولادا", price: "70" },
+          { name: "كوكتيل level up", price: "70" },
+          { name: "فروت كوكتيل", price: "60" },
+          { name: "سموزي مانجو", price: "45" },
+          { name: "سموزي فراوله", price: "35" },
+
         ],
         soft: [
           { name: "بيبسي", price: "25" },
@@ -548,9 +555,10 @@
           { name: "وافل لوتس", price: "40" },
           { name: "وافل كارميل ", price: "40" },
           { name: "وافل level up ", price: "50" },
+          { name: "فروت سلاط", price: "50" },
+          { name: "بوله ايس كريم2 ", price: "25" },
+          { name: "3 بوله ايس كريم", price: "35" },
           { name: "(فشار (جبنه - ملح", price: "20" },
-          { name: "بوله ايس كريم ", price: "20" },
-          { name: "2 بوله ايس كريم", price: "40" },
         ],
       };
 
@@ -579,7 +587,7 @@
     <div class="pixel-corner"></div>
     <div class="message-content">
         <span class="system-text">[level up]:</span> 
-        <span class="typing-text">رمضان كريم استمتع الان بمشروبات رمضانيه حصريا  </span>
+        <span class="typing-text">   رمضان كريم       </span>
     </div>
     <div class="blinking-cursor">▼</div>
 </div>
@@ -605,7 +613,7 @@
         // Disappear after 5 seconds
         setTimeout(() => {
             document.querySelector('.game-notification').classList.add('fade-out');
-        }, 8000);
+        }, 6000);
     };
 </script>
 </div>

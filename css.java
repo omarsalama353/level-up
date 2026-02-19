@@ -7,7 +7,7 @@ function typeWriter() {
     if (i < message.length) {
         textElement.innerHTML += message.charAt(i);
         i++;
-        setTimeout(typeWriter, 50); // Speed of typing
+        setTimeout(typeWriter, 20); // Speed of typing
     }
 }
 
